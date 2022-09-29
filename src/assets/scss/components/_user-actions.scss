@@ -1,0 +1,48 @@
+.user-actions {
+    display: flex;
+    align-items: center;
+
+    &__item {
+        margin-right: 16px;
+
+        &:nth-last-child(2) {
+            margin-right: 24px;
+        }
+    }
+
+    &__item-cart {
+        margin-right: 1px;
+    }
+
+    &__link {
+        display: block;
+        width: 26px;
+        height: 26px;
+
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &--search {
+            background-image: url('../images/search-icon.svg');
+        }
+
+        &--phone {
+            background-image: url('../images/phone-icon.svg');
+        }
+
+        &--statistics {
+            background-image: url('../images/statistics-icon.svg');
+        }
+
+        &--user {
+            background-image: url('../images/user-icon.svg');
+        }
+
+        &--cart {
+            width: 54px;
+            height: 54px;
+
+            background-image: url('../images/cart-icon.svg');
+        }
+    }
+}

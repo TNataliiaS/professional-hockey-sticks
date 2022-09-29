@@ -1,0 +1,26 @@
+.language-selection {
+    display: flex;
+    align-items: center;
+    color: $color-content-light;
+
+    &__item {
+        &:first-child {
+            margin-right: 4px;
+            padding-right: 14px;
+
+            position: relative;
+
+            &:before {
+                content: '\002F';
+
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+
+        &--active {
+            color: #D8D8D8;
+        }
+    }
+}

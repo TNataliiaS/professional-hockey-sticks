@@ -1,0 +1,18 @@
+.site-nav {
+    display: flex;
+    justify-content: center;
+
+    &__item {
+        color: $color-content-light;
+
+        &--active {
+            font-weight: 600;
+            line-height: 20px;
+            color: $color-content-lighter;
+        }
+
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}
