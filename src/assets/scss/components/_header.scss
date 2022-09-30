@@ -8,8 +8,7 @@
     z-index: 1000;
 
     &__nav {
-        display: flex;
-        align-items: center;
+        @extend %flex-align-center;
         height: 80px;
     }
 

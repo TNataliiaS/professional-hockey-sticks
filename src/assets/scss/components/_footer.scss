@@ -15,8 +15,7 @@
     }
 
     &__header {
-        display: flex;
-        align-items: center;
+        @extend %flex-align-center;
         margin-top: -9px;
         margin-bottom: 47px;
     }
@@ -62,29 +61,10 @@
     }
 
     &__button-feedback {
-        width: 150px;
-        height: 150px;
-
-        background: transparent;
-        border: 1px solid #F64F00;
-        border-radius: 50%;
-
         position: absolute;
         top: -6px;
         right: 1px;
         z-index: 2;
-
-        span {
-            line-height: 20px;
-            color: #F64F00;
-            text-align: center;
-
-            position: absolute;
-            top: 50%;
-            left: 50%;
-
-            transform: translate(-50%, -50%);
-        }
     }
 
     &__logo-developers {

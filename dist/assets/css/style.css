@@ -33,6 +33,15 @@
   font-style: normal;
 }
 
+.footer__header,
+.btn,
+.user-actions,
+.language-selection,
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
 body {
   margin: 0;
   background-color: #131111;
@@ -151,8 +160,6 @@ button {
 }
 
 .header__nav {
-  display: flex;
-  align-items: center;
   height: 80px;
 }
 
@@ -182,8 +189,6 @@ button {
 }
 
 .language-selection {
-  display: flex;
-  align-items: center;
   color: #7D7D7D;
 }
 
@@ -221,11 +226,6 @@ button {
 
 .site-nav__item:not(:last-child) {
   margin-right: 24px;
-}
-
-.user-actions {
-  display: flex;
-  align-items: center;
 }
 
 .user-actions__item {
@@ -448,23 +448,176 @@ button {
   }
 }
 
-.intro-slider__catalog-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 150px;
-  font-weight: 600;
-  line-height: 20px;
-  background-color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
+.intro-slider__catalog-button.btn {
   position: absolute;
   top: -74px;
   right: -107px;
   transform: rotate(15deg);
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+
+.discount {
+  padding-bottom: 156px;
+  position: relative;
+}
+
+.discount__wrapper {
+  position: relative;
+}
+
+.discount__title {
+  width: 100%;
+  max-width: 662px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 101px;
+  color: #BCBCBC;
+}
+
+.discount__title-elem {
+  display: inline-block;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #BCBCBC;
+}
+
+.discount__title-elem:nth-of-type(2) {
+  padding-left: 76px;
+}
+
+.discount__decorative {
+  position: absolute;
+  z-index: 2;
+}
+
+.discount__decorative--zipper {
+  width: 43px;
+  height: 63px;
+  top: 23px;
+  left: 342px;
+}
+
+.discount__decorative--zipper:before {
+  content: "";
+  width: 105px;
+  height: 105px;
+  background: radial-gradient(50% 50% at 50% 50%, #0178F3 0%, rgba(1, 120, 243, 0) 100%);
+  filter: blur(32px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.discount__decorative--sale {
+  width: 57px;
+  height: 56px;
+  top: 132px;
+  left: 0;
+}
+
+.discount__decorative--sale:before {
+  content: "";
+  width: 105px;
+  height: 105px;
+  background: radial-gradient(50% 50% at 50% 50%, #F64F00 0%, rgba(246, 79, 0, 0) 100%);
+  filter: blur(32px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.discount__description {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #BCBCBC;
+}
+
+.discount__form {
+  width: 445px;
+  margin-bottom: 57px;
+}
+
+.discount__image {
+  width: 655px;
+  height: 655px;
+  border-radius: 50%;
+  background: url("../images/discount-image.jpg") no-repeat center right -28px;
+  position: absolute;
+  top: -9px;
+  right: -408px;
+  z-index: 2;
+}
+
+.discount__image:before {
+  content: "";
+  width: 736px;
+  height: 736px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #BCBCBC;
+  border-radius: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #7D7D7D;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.btn {
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn--primary {
+  background-color: #fff;
+}
+
+.btn--second {
+  background: transparent;
+  border: 1px solid #F64F00;
+}
+
+.btn--second span {
+  color: #F64F00;
 }
 
 .footer {
@@ -484,8 +637,6 @@ button {
 }
 
 .footer__header {
-  display: flex;
-  align-items: center;
   margin-top: -9px;
   margin-bottom: 47px;
 }
@@ -526,25 +677,10 @@ button {
 }
 
 .footer__button-feedback {
-  width: 150px;
-  height: 150px;
-  background: transparent;
-  border: 1px solid #F64F00;
-  border-radius: 50%;
   position: absolute;
   top: -6px;
   right: 1px;
   z-index: 2;
-}
-
-.footer__button-feedback span {
-  line-height: 20px;
-  color: #F64F00;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .footer__logo-developers {

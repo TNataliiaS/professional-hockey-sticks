@@ -1,6 +1,5 @@
 .language-selection {
-    display: flex;
-    align-items: center;
+    @extend %flex-align-center;
     color: $color-content-light;
 
     &__item {

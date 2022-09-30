@@ -1,0 +1,124 @@
+.discount {
+    padding-bottom: 156px;
+    position: relative;
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__title {
+        width: 100%;
+        max-width: 662px;
+        margin-bottom: 40px;
+
+        font-weight: 700;
+        font-size: 90px;
+        line-height: 101px;
+        color: $color-content-lighter;
+    }
+
+    &__title-elem {
+        display: inline-block;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px $color-content-lighter;
+
+        &:nth-of-type(2) {
+            padding-left: 76px;
+        }
+    }
+
+    &__decorative {
+        position: absolute;
+        z-index: 2;
+
+        &--zipper {
+            width: 43px;
+            height: 63px;
+
+            top: 23px;
+            left: 342px;
+
+            &:before {
+                content: '';
+                width: 105px;
+                height: 105px;
+
+                background: radial-gradient(50% 50% at 50% 50%, #0178F3 0%, rgba(1, 120, 243, 0) 100%);
+                filter: blur(32px);
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &--sale {
+            width: 57px;
+            height: 56px;
+
+            top: 132px;
+            left: 0;
+
+            &:before {
+                content: '';
+                width: 105px;
+                height: 105px;
+
+                background: radial-gradient(50% 50% at 50% 50%, #F64F00 0%, rgba(246, 79, 0, 0) 100%);
+                filter: blur(32px);
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &__description {
+        width: 100%;
+        max-width: 480px;
+        margin-bottom: 20px;
+
+        font-size: 18px;
+        line-height: 24px;
+        color: $color-content-lighter;
+    }
+
+    &__form {
+        width: 445px;
+        margin-bottom: 57px;
+    }
+
+    &__image {
+        width: 655px;
+        height: 655px;
+
+        border-radius: 50%;
+        background: url('../images/discount-image.jpg') no-repeat center right -28px;
+
+        position: absolute;
+        top: -9px;
+        right: -408px;
+        z-index: 2;
+
+        &:before {
+            content: '';
+            width: 736px;
+            height: 736px;
+
+            border-radius: 50%;
+            border: 1px solid $color-content;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+
+            transform: translate(-50%, -50%);
+        }
+    }
+}
