@@ -1,0 +1,27 @@
+.contacts-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__group{
+        margin-bottom: 16px;
+
+        &--lg {
+            width: 100%;
+        }
+
+        &--sm {
+            &:nth-child(odd) {
+                width: 40%;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 4px;
+        color: $color-content-lighter;
+    }
+
+    &__description {
+        margin: 0;
+    }
+}
