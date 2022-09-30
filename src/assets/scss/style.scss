@@ -1,6 +1,6 @@
 @import "./fonts";
 @import "./vars";
-// @import "./extends";
+@import "./extends";
 @import "./mixins";
 @import "./base";
 
@@ -13,8 +13,9 @@
 // @import "./components/burger";
 @import "./components/intro";
 @import "./components/intro-slider";
-// @import "./components/btn";
-// @import "./components/section";
+@import "./components/discount";
+@import "./components/form";
+@import "./components/btn";
 @import "./components/footer";
 @import "./components/social-list";
 @import "./components/contacts-list";

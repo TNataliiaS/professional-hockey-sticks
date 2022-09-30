@@ -1,0 +1,20 @@
+.form {
+    &__input {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+
+        background: none;
+        border: none;
+        border-bottom: 1px solid $color-content-lighter;
+        border-radius: 0;
+
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: $color-content-light;
+
+        appearance: none;
+    }
+}

@@ -1,6 +1,5 @@
 .user-actions {
-    display: flex;
-    align-items: center;
+    @extend %flex-align-center;
 
     &__item {
         margin-right: 16px;

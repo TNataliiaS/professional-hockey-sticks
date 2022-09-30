@@ -1,0 +1,39 @@
+.btn {
+    @extend %flex-align-center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+
+    position: relative;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    &--primary {
+        background-color: #fff;
+
+
+    }
+
+    &--second {
+        background: transparent;
+        border: 1px solid #F64F00;
+
+        span {
+            color: #F64F00;
+        }
+    }
+}
