@@ -65,7 +65,7 @@ input, textarea, select, button {
 /* Focus-element
 ================*/
 :focus {
-    outline: 2px solid $secondary-color;
+    outline: 2px solid $accent-color-bright;
 }
 
 :focus:not(:focus-visible) {
@@ -73,7 +73,7 @@ input, textarea, select, button {
 }
 
 :focus-visible {
-    outline: 2px solid $secondary-color;
+    outline: 2px solid $accent-color-bright;
 }
 
 

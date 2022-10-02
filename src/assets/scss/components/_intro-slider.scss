@@ -1,22 +1,30 @@
 .intro-slider {
-    display: flex;
-    justify-content: center;
-    height: 752px;
-
-    background: url('../images/intro-background.svg') no-repeat top 11px center;
+    &.swiper {
+        overflow: visible;
+    }
 
     &__wrapper {
-        display: flex;
         align-items: flex-end;
+        height: 601px;
+
+        @include breakpoint($breakpoint-xxl) {
+            height: auto;
+        }
     }
 
     &__item {
         display: flex;
-        width: 100%;
-        max-width: 992px;
         height: 511px;
 
         transition: height .5s ease;
+
+        @include breakpoint($breakpoint-xxl) {
+            height: 392px;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            height: 326px;
+        }
 
         &:before,
         &:after {
@@ -33,36 +41,58 @@
             width: 674px;
             height: 634px;
 
-            background: radial-gradient(50% 50% at 50% 50%, #F64F00 0%, rgba(246, 79, 0, 0) 100%);
+            background: radial-gradient(50% 50% at 50% 50%, $accent-color-bright 0%, rgba(246, 79, 0, 0) 100%);
             filter: blur(32px);
 
-            top: -72px;
-            left: -177px;
+            top: -89px;
+            left: -57px;
         }
 
         &:after {
             width: 878px;
             height: 645px;
 
-            background: radial-gradient(50% 50% at 50% 50%, #0178F3 0%, rgba(1, 120, 243, 0) 100%);
+            background: radial-gradient(50% 50% at 50% 50%, $accent-color 0%, rgba(1, 120, 243, 0) 100%);
             filter: blur(32px);
 
-            top: -137px;
-            right: -292px;
+            top: -135px;
+            right: -143px;
         }
 
         &.swiper-slide.swiper-slide-prev {
-            padding-right: 27px;
+            padding-right: 31px;
             justify-content: flex-end;
+
+            top: -4px;
+
+            @include breakpoint($breakpoint-xxl) {
+                padding-right: 0;
+            }
         }
 
         &.swiper-slide.swiper-slide-next {
-            padding-left: 12px;
-            justify-content: flex-start;
+            padding-left: 11px;
+            top: -4px;
+
+            @include breakpoint($breakpoint-xxl)  {
+                padding-left: 0;
+            }
         }
 
         &.swiper-slide-active {
             height: 601px;
+            margin-left: 5px;
+            margin-top: -1px;
+            justify-content: center;
+
+            @include breakpoint($breakpoint-xxl) {
+                margin-left: 0;
+                height: 466.5px;
+            }
+
+            @include breakpoint($breakpoint-lg) {
+                height: 326px;
+            }
 
             & .intro-slider__content,
             & .intro-slider__catalog-button,
@@ -73,21 +103,43 @@
         }
 
         &.swiper-slide-active .intro-slider__video {
-            width: 992px;
+            max-width: 992px;
             height: 601px;
             margin-left: -2px;
 
             border-radius: 100px 0px;
+
+            @include breakpoint($breakpoint-xxl) {
+                max-width: 770px;
+                height: 466.5px;
+            }
+
+            @include breakpoint($breakpoint-lg) {
+                max-width: 538px;
+                height: 326px;
+            }
         }
     }
 
     &__video {
-        width: 830px;
+        width: 100%;
+        max-width: 830px;
         height: 511px;
+        object-fit: cover;
 
         border-radius: 140px 140px 0 0;
 
         transition: border-radius .5s ease;
+
+        @include breakpoint($breakpoint-xxl) {
+            max-width: 647px;
+            height: 392px;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            max-width: 538px;
+            height: 326px;
+        }
     }
 
     &__navigation-buttons {
@@ -95,11 +147,23 @@
         max-width: 1219px;
 
         position: absolute;
-        top: 424px;
+        top: 45%;
         left: 50%;
         z-index: 10;
 
         transform: translateX(-50%);
+
+        @include breakpoint($breakpoint-xxl) {
+            max-width: 990px;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            max-width: 665px;
+        }
+
+        @include breakpoint($breakpoint-md) {
+            display: none;
+        }
     }
 
     &__button {
@@ -121,7 +185,8 @@
         }
 
         &.swiper-button-disabled {
-            display: none;
+           opacity: .3;
+           pointer-events: none;
         }
     }
 
@@ -129,6 +194,17 @@
         display: block;
         width: 78px;
         height: 58px;
+
+        transition: opacity .2s ease;
+
+        &:hover {
+            opacity: .5;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            width: 47px;
+            height: 35px;
+        }
     }
 
     &__content {
@@ -137,11 +213,32 @@
 
         position: absolute;
         top: 48px;
-        right: 87px;
+        right: 212px;
         z-index: 2;
 
         opacity: 0;
         transition: opacity .5s ease;
+
+        @include breakpoint($breakpoint-xxl) {
+            right: 125px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            top: 55px;
+            left: 215px;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            max-width: 150px;
+
+            top: 114px;
+            left: 105px;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            top: 85px;
+            left: 33px;
+        }
     }
 
     &__title {
@@ -151,11 +248,34 @@
         font-weight: 600;
         line-height: 29px;
         color: $secondary-color;
+
+        @include breakpoint($breakpoint-xxl) {
+            font-size: 22px;
+            line-height: 27px;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            margin-bottom: 5px;
+
+            font-size: 16px;
+            line-height: 22px;
+        }
     }
 
     &__description {
         margin-bottom: 33px;
         color: $secondary-color;
+
+        @include breakpoint($breakpoint-xxl) {
+            margin-bottom: 22px;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            margin-bottom: 14px;
+
+            font-size: 12px;
+            line-height: 16px;
+        }
     }
 
     &__video-play {
@@ -172,12 +292,42 @@
         border-radius: 50%;
         cursor: pointer;
 
-        svg {
-            width: 115px;
-            height: 115px;
+        position: relative;
 
-            animation: rotateText 10s linear infinite;
+        transition: animation .2s linear;
+
+        &:hover {
+            & .intro-slider__video-play-text {
+                animation: none;
+            }
         }
+
+        @include breakpoint($breakpoint-lg) {
+            width: 100px;
+            height: 100px;
+
+            background-position: left 42px center;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            width: 70px;
+            height: 70px;
+
+            background-position: left 27px center;
+        }
+    }
+
+    &__video-play-text {
+        width: 115px;
+        height: 115px;
+
+        fill: $secondary-color;
+
+        position: absolute;
+        top: 4px;
+        right: 4px;
+
+        animation: rotateText 10s linear infinite;
 
         @keyframes rotateText {
             0%
@@ -190,15 +340,56 @@
                 transform: rotate(360deg);
             }
         }
+
+        @include breakpoint($breakpoint-lg) {
+            width: 90px;
+            height: 90px;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            display: none;
+        }
     }
 
     &__catalog-button.btn {
         position: absolute;
-        top: -74px;
-        right: -107px;
+        top: -75px;
+        right: 19px;
         transform: rotate(15deg);
 
         opacity: 0;
-        transition: opacity .5s ease;
+        transition: all .5s ease;
+
+        @include breakpoint($breakpoint-xl) {
+            top: -55px;
+            right: 80px;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            display: none;
+        }
+    }
+
+    &__pagination {
+        display: none;
+
+        & .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+
+            background-color: $color-content-lighter;
+        }
+
+        &.swiper-pagination-bullets {
+            bottom: -35px;
+        }
+
+        & .swiper-pagination-bullet-active {
+            background-color: $secondary-color;
+        }
+
+        @include breakpoint($breakpoint-md) {
+            display: block;
+        }
     }
 }

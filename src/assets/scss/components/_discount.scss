@@ -1,4 +1,5 @@
 .discount {
+    padding-top: 70px;
     padding-bottom: 156px;
     position: relative;
 
@@ -15,6 +16,31 @@
         font-size: 90px;
         line-height: 101px;
         color: $color-content-lighter;
+
+        font-variant-numeric: lining-nums;
+        -webkit-font-feature-settings: "lnum" 1;
+        -moz-font-feature-settings: "lnum" 1;
+        font-feature-settings: "lnum" 1;
+
+        @include breakpoint($breakpoint-lg) {
+            margin-bottom: 30px;
+
+            font-size: 74px;
+            line-height: 83px;
+        }
+
+        @include breakpoint($breakpoint-md) {
+            font-size: 70px;
+            line-height: 79px;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            margin-bottom: 20px;
+
+            font-size: 56px;
+            line-height: 63px;
+            text-align: center;
+        }
     }
 
     &__title-elem {
@@ -24,6 +50,10 @@
 
         &:nth-of-type(2) {
             padding-left: 76px;
+
+            @include breakpoint($breakpoint-sm) {
+                padding-left: 0;
+            }
         }
     }
 
@@ -32,18 +62,15 @@
         z-index: 2;
 
         &--zipper {
-            width: 43px;
-            height: 63px;
-
             top: 23px;
-            left: 342px;
+            left: 333px;
 
             &:before {
                 content: '';
                 width: 105px;
                 height: 105px;
 
-                background: radial-gradient(50% 50% at 50% 50%, #0178F3 0%, rgba(1, 120, 243, 0) 100%);
+                background: radial-gradient(50% 50% at 50% 50%, $accent-color 0%, rgba(1, 120, 243, 0) 100%);
                 filter: blur(32px);
 
                 position: absolute;
@@ -52,12 +79,19 @@
                 z-index: 1;
                 transform: translate(-50%, -50%);
             }
+
+            @include breakpoint($breakpoint-lg) {
+                top: 5px;
+                left: 270px;
+            }
+
+            @include breakpoint($breakpoint-sm) {
+                top: 14px;
+                left: 0;
+            }
         }
 
         &--sale {
-            width: 57px;
-            height: 56px;
-
             top: 132px;
             left: 0;
 
@@ -66,7 +100,7 @@
                 width: 105px;
                 height: 105px;
 
-                background: radial-gradient(50% 50% at 50% 50%, #F64F00 0%, rgba(246, 79, 0, 0) 100%);
+                background: radial-gradient(50% 50% at 50% 50%, $accent-color-bright 0%, rgba(246, 79, 0, 0) 100%);
                 filter: blur(32px);
 
                 position: absolute;
@@ -75,6 +109,45 @@
                 z-index: 1;
                 transform: translate(-50%, -50%);
             }
+
+            @include breakpoint($breakpoint-lg) {
+                top: 95px;
+            }
+
+            @include breakpoint($breakpoint-sm) {
+                top: 385px;
+                left: 47px;
+            }
+
+            @include breakpoint($breakpoint-xs) {
+                top: 490px;
+            }
+        }
+    }
+
+    &__decorative-zipper-icon {
+        width: 64px;
+        height: 63px;
+
+        fill: transparent;
+        stroke: $accent-color;
+
+        @include breakpoint($breakpoint-sm) {
+            width: 57px;
+            height: 56px;
+        }
+    }
+
+    &__decorative-sale-icon {
+        width: 57px;
+        height: 56px;
+
+        fill: transparent;
+        stroke: $accent-color-bright;
+
+        @include breakpoint($breakpoint-sm) {
+            width: 50px;
+            height: 49px;
         }
     }
 
@@ -86,11 +159,41 @@
         font-size: 18px;
         line-height: 24px;
         color: $color-content-lighter;
+
+        @include breakpoint($breakpoint-md) {
+            max-width: none;
+            width: 73%;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            width: 100%;
+
+            font-size: 16px;
+            text-align: center;
+        }
     }
 
     &__form {
         width: 445px;
         margin-bottom: 57px;
+
+        @include breakpoint($breakpoint-lg) {
+            margin-bottom: 40px;
+        }
+
+        @include breakpoint($breakpoint-md) {
+            width: 50%;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            width: 70%;
+            margin-bottom: 20px;
+            margin-left: auto;
+        }
+
+        @include breakpoint($breakpoint-xs) {
+            width: 100%;
+        }
     }
 
     &__image {
@@ -119,6 +222,56 @@
             z-index: 1;
 
             transform: translate(-50%, -50%);
+
+            @include breakpoint($breakpoint-lg) {
+                width: 560px;
+                height: 560px;
+            }
+
+            @include breakpoint($breakpoint-md) {
+                width: 450px;
+                height: 450px;
+            }
+        }
+
+        @include breakpoint($breakpoint-xxl) {
+            right: -205px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            right: -375px;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            width: 500px;
+            height: 500px;
+
+            background-position: top -34px right -165px;
+
+            top: 95px;
+            right: -290px;
+        }
+
+        @include breakpoint($breakpoint-md) {
+            width: 400px;
+            height: 400px;
+
+            background-position: top -30px right -250px;
+
+            top: 265px;
+            right: -215px;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            display: none;
+        }
+    }
+
+    &__btn {
+        margin-left: -1px;
+
+        @include breakpoint($breakpoint-sm) {
+            margin-left: auto;
         }
     }
 }

@@ -2,6 +2,10 @@
     display: flex;
     flex-wrap: wrap;
 
+    @include breakpoint($breakpoint-md) {
+        margin-top: 0;
+    }
+
     &__group{
         margin-bottom: 16px;
 
@@ -14,14 +18,30 @@
                 width: 40%;
             }
         }
+
+        @include breakpoint($breakpoint-md) {
+            font-size: 14px;
+        }
     }
 
     &__title {
         margin-bottom: 4px;
         color: $color-content-lighter;
+
+        @include breakpoint($breakpoint-md) {
+            margin-bottom: 0;
+        }
     }
 
     &__description {
         margin: 0;
+
+        transition: opacity .2s linear;
+
+        &:hover {
+            > a {
+                opacity: .5;
+            }
+        }
     }
 }
