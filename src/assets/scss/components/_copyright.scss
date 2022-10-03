@@ -3,6 +3,11 @@
 
     &__link {
         position: relative;
+        transition: opacity .2s linear;
+
+        &:hover {
+            opacity: .5;
+        }
 
         &:before {
             content: '';

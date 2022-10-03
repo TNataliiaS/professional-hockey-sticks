@@ -2,13 +2,24 @@
     display: flex;
 
     &__item {
+        transition: all .5s ease;
+
         &:not(:last-child) {
             margin-right: 16px;
         }
+
+        &:hover {
+            & .social-list__icon {
+                stroke: $accent-color-bright;
+            }
+        }
     }
 
-    &__link {
+    &__icon {
         width: 40px;
         height: 40px;
+
+        fill: transparent;
+        stroke: $color-content-light;
     }
 }

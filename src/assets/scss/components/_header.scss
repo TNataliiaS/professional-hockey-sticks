@@ -7,21 +7,50 @@
     right: 0;
     z-index: 1000;
 
+    background-color: $primary-color;
+
     &__nav {
         @extend %flex-align-center;
         height: 80px;
+
+        @include breakpoint($breakpoint-md) {
+            height: 70px;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            height: 65px;
+        }
     }
 
     &__logo {
         margin-right: 40px;
+
+        @include breakpoint($breakpoint-xl) {
+            margin-right: 20px;
+        }
     }
 
     &__language {
         margin-right: 90px;
+
+        @include breakpoint($breakpoint-xl) {
+            margin-right: 20px;
+        }
     }
 
     &__site-nav {
         flex-grow: 1;
         margin-right: 20px;
+
+        @include breakpoint($breakpoint-xl) {
+            display: none;
+        }
+    }
+
+    &__burger {
+        @include breakpoint($breakpoint-xl) {
+            flex-grow: 1;
+            margin-right: 15px;
+        }
     }
 }

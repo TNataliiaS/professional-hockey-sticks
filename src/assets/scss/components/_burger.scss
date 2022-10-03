@@ -1,0 +1,27 @@
+.burger {
+    display: none;
+    width: 30px;
+    height: 23px;
+    padding: 0 35px 0 0;
+
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    position: relative;
+    font-size: 0;
+    color: transparent;
+
+    &__item {
+        display: block;
+        width: 30px;
+        height: 1px;
+        margin: 4px 0;
+
+        background-color: $color-content-light;
+    }
+
+    @include breakpoint($breakpoint-xl) {
+        display: block;
+    }
+}

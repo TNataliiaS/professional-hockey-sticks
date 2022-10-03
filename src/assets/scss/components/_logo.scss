@@ -2,6 +2,11 @@
     flex-shrink: 0;
     width: 62px;
     height: 30px;
+
+    @include breakpoint($breakpoint-md) {
+        width: 37px;
+        height: 17.9px;
+    }
 }
 
 .logo-dark {

@@ -3,14 +3,35 @@
 
     &__item {
         margin-right: 16px;
+        transition: opacity .2s ease;
 
         &:nth-last-child(2) {
             margin-right: 24px;
+
+            @include breakpoint($breakpoint-xl) {
+                margin-right: 16px;
+            }
+        }
+
+        &:hover {
+            opacity: .5;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            &:nth-child(2),
+            &:nth-child(3) {
+                margin-right: 0;
+            }
         }
     }
 
     &__item-cart {
         margin-right: 1px;
+        transition: opacity .2s ease;
+
+        &:hover {
+            opacity: .5;
+        }
     }
 
     &__link {
@@ -27,10 +48,18 @@
 
         &--phone {
             background-image: url('../images/phone-icon.svg');
+
+            @include breakpoint($breakpoint-lg) {
+                display: none;
+            }
         }
 
         &--statistics {
             background-image: url('../images/statistics-icon.svg');
+
+            @include breakpoint($breakpoint-lg) {
+                display: none;
+            }
         }
 
         &--user {
